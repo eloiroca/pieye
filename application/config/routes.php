@@ -55,6 +55,29 @@ $route['software-apple'] = 'intranet/mostrar_software_apple';
 $route['software-android'] = 'intranet/mostrar_software_android';
 $route['passwords'] = 'password';
 
+/*VEHICLES*/
+$route['vehiculos'] = 'vehicle';
+$route['gestio_vehicles'] = 'vehicle/grosery_vehicles/add';
+$route['gestio_vehicles/add'] = 'vehicle/grosery_vehicles/add';
+$route['gestio_vehicles/insert'] = 'vehicle/grosery_vehicles/insert';
+$route['gestio_vehicles/insert_validation'] = 'vehicle/grosery_vehicles/insert_validation';
+$route['gestio_vehicles/update_validation/:num'] = 'vehicle/grosery_vehicles/update_validation';
+$route['gestio_vehicles/update/:num'] = 'vehicle/grosery_vehicles/update';
+$route['gestio_vehicles/success/:num'] = 'vehicle/grosery_vehicles/success';
+$route['gestio_vehicles/delete/:num'] = 'vehicle/grosery_vehicles/delete';
+$route['gestio_vehicles/edit/:num'] = 'vehicle/grosery_vehicles/edit';
+$route['gestio_vehicles/ajax_list_info'] = 'vehicle/grosery_vehicles/ajax_list_info';
+$route['gestio_vehicles/ajax_list'] = 'vehicle/grosery_vehicles/ajax_list';
+
+$route['vehiculos/vehiculo_timeline/(:num)'] = 'vehicle/vehicle_timeline/$1';
+
+
+
+
+
+
+
+
 
 
 $route['404_override'] = '';

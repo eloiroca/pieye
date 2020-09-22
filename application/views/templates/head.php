@@ -31,7 +31,7 @@
     <!-- Grafics de Google -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-  
+
 
 
     <!-- Font Awesome -->
@@ -52,4 +52,4 @@
     <!-- Estil del Tema -->
     <link href="<?php echo base_url("assets/css/tema.css")?>" rel="stylesheet">
 
-  </head>
+  

@@ -3141,7 +3141,7 @@ ul.bar_tabs {
   border-bottom: 1px solid #E6E9ED; }
 
 ul.bar_tabs > li {
-  border: 1px solid #E6E9ED;
+  border: 1px solid #1ABB9C;
   color: #333 !important;
   margin-top: -17px;
   margin-left: 8px;
@@ -3150,7 +3150,7 @@ ul.bar_tabs > li {
   border-radius: 4px 4px 0 0; }
 
 ul.bar_tabs > li.active {
-  border-right: 6px solid #D3D6DA;
+  border-right: 6px solid #1ABB9C;
   border-top: 0;
   margin-top: -15px; }
 
@@ -3262,6 +3262,10 @@ ul.timeline li {
 
 ul.social li {
   border: 0; }
+
+  .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    border: 1px solid #1ABB9C;
+  }
 
 /* *********  /timeline  **************************** */
 /* *********  profile/social  **************************** */
@@ -3486,7 +3490,7 @@ ul.count2 {
   display: inherit; }
 
 ul.count2 li {
-  width: 30%;
+  width: 50%;
   text-align: center; }
 
 ul.count2 li h3 {
@@ -5092,6 +5096,67 @@ input{
    color: #2A3F54;
 }
 
+.titol_caracteristica{
+  font-size: 20px;
+    font-weight: bold !important;
+    color: #1ABB9C;
+    font-style: italic;
+
+}
+
+.imatge_vehicles{
+
+  width: 100% !important;
+  margin: 0;
+  margin-top: -51px !important;
+  border-radius: 0px !important;
+  height: auto !important;
+}
+
+.apartat_imatge_vehicle,.contenedor_veure_vehicle{
+  width: 100% !important;
+  text-align: center;
+}
+
+
+.centrat {
+    text-align: center;
+    margin-top: 10px;
+    border-left: 5px solid #0e364c;
+    border-right: 5px solid #0e364c;
+    background-color: #e5e5e5;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 10px;
+}
+
+#div_foto {
+    background-color: #0e364c;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 11px;
+}
+
+.imatge_perfil_vehicle{
+    width: 100% !important;
+    margin: 0 auto;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    border-radius: 0px !important;
+    height: auto !important;
+}
+
+.timeline_important {
+    color: black;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.timeline_no_important {
+  font-size: 17px;
+  color: black;
+  
+}
 /*
   ##Device = Laptops, Desktops
   ##Screen = B/w 1025px to 1280px

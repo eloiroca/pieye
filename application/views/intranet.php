@@ -155,6 +155,7 @@
 
                                 echo "<td>".$grups_usuari."</td>";
                                 echo "</tr>";
+
                               } ?>
                             </tbody>
                           </table>

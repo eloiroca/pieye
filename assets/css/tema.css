@@ -5217,3 +5217,9 @@ input{
         padding-right: 0px;
     }
 }
+
+@media (max-width: 1800px) {
+
+	table.table.table-hover.usuaris_inici {
+		font-size: 10px;}
+}

@@ -70,6 +70,9 @@ $route['gestio_vehicles/ajax_list_info'] = 'vehicle/grosery_vehicles/ajax_list_i
 $route['gestio_vehicles/ajax_list'] = 'vehicle/grosery_vehicles/ajax_list';
 
 $route['vehiculos/vehiculo_timeline/(:num)'] = 'vehicle/vehicle_timeline/$1';
+$route['vehiculos/registro_timeline'] = 'vehicle/registre_timeline';
+
+
 
 
 

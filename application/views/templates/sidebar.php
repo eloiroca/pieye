@@ -13,7 +13,7 @@
       <li><a><i class="fa fa-car"></i> Vehículo <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="<?php echo base_url().'vehiculos';?>">Vehículos</a></li>
-          <li><a href="form_advanced.html">+ Registro directo</a></li>
+          <li><a href="<?php echo base_url().'vehiculos/registro_timeline';?>">+ Registro directo</a></li>
         </ul>
       </li>
       <li><a><i class="fa fa-desktop"></i> Objeto <span class="fa fa-chevron-down"></span></a>

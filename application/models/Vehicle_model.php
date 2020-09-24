@@ -23,7 +23,11 @@
         return $query->result_array();
     }
 
-
+    //Funcio que retornara els tipus de reparacions de la bd
+	public function get_tipus_reparacions_bd(){
+		$query = $this->db->query("SELECT * FROM tipus_reparacio");
+		return $query->result_array();
+	}
 
   }
 ?>

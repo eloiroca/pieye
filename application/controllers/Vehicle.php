@@ -43,6 +43,20 @@ class Vehicle extends CI_Controller {
         }else{redirect('auth/login', 'refresh');}
     }
 
+	public function registre_timeline(){
+		//Si esta loggejat carregarem la pagina de vehicles
+		if($this->ion_auth->logged_in() ){
+			$data['id'] = $this->session->userdata('user_id');
+			$data['correu'] = $this->session->userdata('email');
+			$data['nom'] = $this->ion_auth->user()->row();
+			$data['foto_url'] = $this->obtenir_foto();
+
+			$data['dades_vehicles'] = $this->obtenir_vehicles_user($data['id']);
+			$data['dades_reparacions'] = $this->vehicle_model->get_tipus_reparacions_bd();
+			$this->load->view('vehicle_registre_directe', $data);
+		}else{redirect('auth/login', 'refresh');}
+	}
+
     public function obtenir_foto(){
         //Foto per defecte
         return "assets/img/icono-usuariDefecte.png";

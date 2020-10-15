@@ -23,10 +23,10 @@
                           <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-							<form>
+							<form method="post" id="formulariRegistreDirecteVehicles" action="<?php echo base_url('/vehicle/afegir_registre_directe') ?>">
 								<div class="form-group">
 									<label for="exampleFormControlInput1">Vehículo</label>
-									<select class="form-control" id="exampleFormControlSelect1" required>
+									<select name="vehicle" class="form-control" id="exampleFormControlSelect1" required>
 										<?php for ($i=0; $i < count($dades_vehicles); $i++) {
 											echo "<option value=".$dades_vehicles[$i]['id'].">".$dades_vehicles[$i]['matricula']." → ".$dades_vehicles[$i]['marca']." ".$dades_vehicles[$i]['model']."</option>";
 										}
@@ -36,11 +36,11 @@
 								</div>
 								<div class="form-group">
 									<label for="exampleFormControlSelect1">Descripción</label>
-									<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Mantenimiento, cambio de filtros y líquidos por kilometraje" required>
+									<input type="text" name="descripcio" class="form-control" id="exampleFormControlInput1" placeholder="Mantenimiento, cambio de filtros y líquidos por kilometraje" required>
 								</div>
 								<div class="form-group">
 									<label for="exampleFormControlSelect2">Tipo de Reparación</label>
-									<select class="form-control" id="exampleFormControlSelect1" required>
+									<select class="form-control" name="tipus_reparacio" id="exampleFormControlSelect1" required>
 										<?php for ($i=0; $i < count($dades_reparacions); $i++) {
 											echo "<option value=".$dades_reparacions[$i]['id_reparacio']." style='color:".$dades_reparacions[$i]['color']."'>".$dades_reparacions[$i]['nom']."</option>";
 										}
@@ -49,13 +49,13 @@
 								</div>
 								<div class="form-group">
 									<label for="exampleFormControlSelect1">Fecha</label>
-									<input type="date" class="form-control" id="exampleFormControlInput1" >
+									<input type="date" name="data" class="form-control" id="exampleFormControlInput1" required>
 								</div>
 								<div class="form-group">
 									<label for="exampleFormControlSelect1">KM Actuals</label>
-									<input type="number" class="form-control" id="exampleFormControlInput1" required placeholder="0" >
+									<input type="number" class="form-control" name="km_actuals" id="exampleFormControlInput1" required placeholder="0" >
 								</div>
-
+								<button type="submit" class="btn btn-primary">Submit</button>
 							</form>
                         </div>
                       </div>

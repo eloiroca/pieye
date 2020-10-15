@@ -57,6 +57,25 @@ class Vehicle extends CI_Controller {
 		}else{redirect('auth/login', 'refresh');}
 	}
 
+	public function afegir_registre_directe(){
+		//Si esta loggejat inserirem el registre de modificacio de vehicle
+		if($this->ion_auth->logged_in() ){
+			$data['id'] = $this->session->userdata('user_id');
+			$data['correu'] = $this->session->userdata('email');
+			$data['nom'] = $this->ion_auth->user()->row();
+			$data['foto_url'] = $this->obtenir_foto();
+
+			$this->vehicle_model->inserir_registre_directe_vehicle($_POST['vehicle'],$_POST['descripcio'],$_POST['tipus_reparacio'],$_POST['data'],$_POST['km_actuals']);
+
+			$data['vehicles'] = $this->obtenir_vehicles_user($data['id']);
+
+			$this->load->view('vehicles', $data);
+
+
+			//print_r($_POST);
+		}else{redirect('auth/login', 'refresh');}
+	}
+
     public function obtenir_foto(){
         //Foto per defecte
         return "assets/img/icono-usuariDefecte.png";

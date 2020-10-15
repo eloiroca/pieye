@@ -5157,6 +5157,30 @@ input{
   color: black;
   
 }
+
+
+.btn-block {
+	text-align: center;
+	display: block !important;
+	border: 2px solid !important;
+	border-color: #C70039 !important;
+	color: #C70039 !important;
+	background-color: white !important;
+	padding: 8px 20px !important;
+	border-radius: 8px !important;
+	font-size: 20px !important;
+	font-weight: bold !important;
+	height: auto !important;
+}
+.btn.btn-primary.btn-lg.btn-block.boto_backup {
+	color: #AF4FD0 !important;
+	border-color: #AF4FD0 !important;
+}
+
+.info_dades_backups {
+	color: #AF54D4;
+	word-break: break-word;
+}
 /*
   ##Device = Laptops, Desktops
   ##Screen = B/w 1025px to 1280px

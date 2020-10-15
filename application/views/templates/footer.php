@@ -1,9 +1,9 @@
 <!-- footer content -->
 <footer>
-  <div class="pull-right">
-    <p class="footer">Página renderizada en <strong>{elapsed_time}</strong> segundos. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-  </div>
-  <div class="clearfix"></div>
+	<div class="pull-right">
+		<p class="footer">Página renderizada en <strong>{elapsed_time}</strong> segundos. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+	</div>
+	<div class="clearfix"></div>
 </footer>
 <!-- /footer content -->
 

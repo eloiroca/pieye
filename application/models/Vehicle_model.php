@@ -29,5 +29,11 @@
 		return $query->result_array();
 	}
 
+	//Funcio que afegira un registre directe a la BD
+	public function inserir_registre_directe_vehicle($vehicle,$descripcio,$tipus_reparacio,$data,$km_actuals){
+		$query = $this->db->query("insert into vehicle_timeline (descripcio, id_vehicle, data_timeline, km_actuals, id_reparacio) values ('$descripcio',$vehicle,'$data',$km_actuals,$tipus_reparacio)");
+    }
+
+
   }
 ?>

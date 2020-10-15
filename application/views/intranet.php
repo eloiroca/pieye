@@ -181,7 +181,7 @@
                           <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-							<?php if (count($estatserveis)<1){ ?>
+							<?php if ($estatserveis<1){ ?>
                             <tr>
 
                               <td>

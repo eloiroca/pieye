@@ -56,79 +56,12 @@
                             <img src="<?php echo base_url($foto_url)?>" alt=""><?php echo $correu; ?>
                           </a>
                           <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                            <a class="dropdown-item"  href="javascript:;">
-                              <span class="badge bg-red pull-right">50%</span>
-
-                            </a>
-                            <a class="dropdown-item"  href="javascript:;">Help</a>
-                            <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+							<div class="row contendor_perfil">
+								<a class="" href="<?php echo base_url().'auth'?>"><div class="col-md-4 col-sm-6 apartat_perfil"><i class="fa fa-user pull-right"></i> Perfil</div></a>
+								<a class="" href="<?php echo base_url().'configuracion';?>"><div class="col-md-4 col-sm-6 apartat_perfil"><i class="fa fa-cog pull-right"></i> Conf</div></a>
+							    <a class="" href="<?php echo base_url().'auth/logout'?>"><div class="col-md-4 col-sm-6 apartat_perfil"><i class="fa fa-sign-out pull-right"></i> Salir</div></a>
+							</div>
                           </div>
-                        </li>
-
-                        <li role="presentation" id="missatges" class="nav-item dropdown">
-                          <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-green">6</span>
-                          </a>
-                          <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                            <li class="nav-item">
-                              <a class="dropdown-item">
-                                <span class="image"><img src="<?php echo base_url($foto_url)?>" alt="Profile Image" /></span>
-                                <span>
-                                  <span>John Smith</span>
-                                  <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                  Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="dropdown-item">
-                                <span class="image"><img src="<?php echo base_url($foto_url)?>" alt="Profile Image" /></span>
-                                <span>
-                                  <span>John Smith</span>
-                                  <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                  Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="dropdown-item">
-                                <span class="image"><img src="<?php echo base_url($foto_url)?>" alt="Profile Image" /></span>
-                                <span>
-                                  <span>John Smith</span>
-                                  <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                  Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="dropdown-item">
-                                <span class="image"><img src="<?php echo base_url($foto_url)?>" alt="Profile Image" /></span>
-                                <span>
-                                  <span>John Smith</span>
-                                  <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                  Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <div class="text-center">
-                                <a class="dropdown-item">
-                                  <strong>See All Alerts</strong>
-                                  <i class="fa fa-angle-right"></i>
-                                </a>
-                              </div>
-                            </li>
-                          </ul>
                         </li>
                       </ul>
                     </nav>

@@ -62,7 +62,7 @@
                                             <span>Matriculació</span>
                                           </li>
                                           <li>
-                                            <h3 class="titol_caracteristica"><?php echo $vehicles[$i]['km_totals']; ?></h3>
+                                            <h3 class="titol_caracteristica"><?php echo $vehicles[$i]['km_actuals']; ?></h3>
                                             <span>KMS</span>
                                           </li>
                                         </ul>

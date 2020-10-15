@@ -67,9 +67,7 @@ class Vehicle extends CI_Controller {
 
 			$this->vehicle_model->inserir_registre_directe_vehicle($_POST['vehicle'],$_POST['descripcio'],$_POST['tipus_reparacio'],$_POST['data'],$_POST['km_actuals']);
 
-			$data['vehicles'] = $this->obtenir_vehicles_user($data['id']);
-
-			$this->load->view('vehicles', $data);
+			redirect('vehiculos');
 
 
 			//print_r($_POST);
@@ -134,7 +132,7 @@ class Vehicle extends CI_Controller {
               $any_timeline = date("Y", strtotime ($vehicle_timeline[$s]['data_timeline']));
               $mes_timeline = date("m", strtotime ($vehicle_timeline[$s]['data_timeline']));
 
-              $mes_timeline = str_replace(0,'',$mes_timeline);
+              //$mes_timeline = str_replace(0,'',$mes_timeline);
               if ($any_timeline==$i && $mes_timeline==$f){
 
                   $vehicle_timeline_ordenat_any[$any_timeline][$mes_timeline][$contador_mes] = $vehicle_timeline[$s];
@@ -176,5 +174,6 @@ class Vehicle extends CI_Controller {
 
       return $vehicle_timeline_ordenat_any;
     }
+
 
 }

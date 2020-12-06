@@ -5193,6 +5193,20 @@ input{
 	margin-right: 0px !important;
 	margin-left: 0px !important;
 }
+
+.progress{
+	margin-top: 10px;
+}
+
+
+.progress-bar-striped{
+	background-color: #23527c !important;
+}
+
+.progress_bd{
+	display: none;
+}
+
 /*
 ##Device = Laptops, Desktops
 ##Screen = B/w 1025px to 1280px

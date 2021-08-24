@@ -15,6 +15,16 @@
         })
     })
 
+    /*==================================================================
+    [ Session Storage ]*/
+
+    if (sessionStorage.getItem("email").length > 0){
+        $('[name="identity"]').val(sessionStorage.getItem("email"));
+        $('[name="identity"]').addClass('has-val');
+    }
+    $('[name="identity"]').blur(function() {
+        sessionStorage.setItem("email",$('[name="identity"]').val());
+    });
 
     /*==================================================================
     [ Validate ]*/

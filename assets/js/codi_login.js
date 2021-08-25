@@ -18,7 +18,7 @@
     /*==================================================================
     [ Session Storage ]*/
 
-    if (sessionStorage.getItem("email").length > 0){
+    if (sessionStorage.getItem("email")){
         $('[name="identity"]').val(sessionStorage.getItem("email"));
         $('[name="identity"]').addClass('has-val');
     }
@@ -39,7 +39,6 @@
                 check=false;
             }
         }
-
         return check;
     });
 

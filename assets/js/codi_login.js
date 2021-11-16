@@ -16,16 +16,22 @@
     })
 
     /*==================================================================
-    [ Session Storage ]*/
-
+    [ Session Storage and Cookie ]*/
+    var email = getCookie('pi_email');
     if (sessionStorage.getItem("email")){
-        $('[name="identity"]').val(sessionStorage.getItem("email"));
-        $('[name="identity"]').addClass('has-val');
+        var email = sessionStorage.getItem("email");
+        autocompleteEmail(email);
+    }else if (email.length > 0){
+        autocompleteEmail(email);
     }
     $('[name="identity"]').blur(function() {
         sessionStorage.setItem("email",$('[name="identity"]').val());
+        const d = new Date();
+        d.setTime(d.getTime() + (365*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = "pi_email=" + $('[name="identity"]').val() + ";" + expires + ";path=/";
     });
-
+    
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
@@ -49,6 +55,11 @@
         });
     });
 
+    function autocompleteEmail(email){
+      $('[name="identity"]').val(email);
+      $('[name="identity"]').addClass('has-val');
+    }
+
     function validate (input) {
         if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
             if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
@@ -66,6 +77,21 @@
         var thisAlert = $(input).parent();
 
         $(thisAlert).addClass('alert-validate');
+    }
+
+    function getCookie(cname) {
+      let name = cname + "=";
+      let ca = document.cookie.split(';');
+      for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
     }
 
     function hideValidate(input) {

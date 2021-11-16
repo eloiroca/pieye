@@ -4,15 +4,15 @@ function pintarMonitoreigRam(tipusDispositiu, dades_monitoreig){
   if (tipusDispositiu == "ordenador"){amplada_grafic=450;alsada_grafic=200}else{amplada_grafic=190;alsada_grafic=100}
 
   var dades_RAM = dades_monitoreig[2].split(" ");
+  dades_RAM = dades_RAM.filter(n => n);
 
-  var totalRAM = dades_RAM[8];
-  var lliureRAM = dades_RAM[18];
+  var totalRAM = dades_RAM[1];
+  var lliureRAM = dades_RAM[3];
   var utilitzadaRAM = totalRAM-lliureRAM;
   var percentatgeLliureRAM = (lliureRAM * 100)/totalRAM;
 
   var totalRAM_MB=totalRAM/1024;
   var utilitzadaRAM_MB=utilitzadaRAM/1024;
-
   function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ['Language', 'Rating'],
@@ -93,9 +93,10 @@ function pintarMonitoreigEspai(tipusDispositiu, dades_monitoreig){
   if (tipusDispositiu == "ordenador"){amplada_grafic=450;alsada_grafic=210}else{amplada_grafic=370;alsada_grafic=100}
 
   var dades_ESPAI = dades_monitoreig[3].split(" ");
+  dades_ESPAI = dades_ESPAI.filter(n => n);
 
-  var totalMEM = dades_ESPAI[7].slice(0,-1);
-  var lliureMEM = dades_ESPAI[11].slice(0,-1);
+  var totalMEM = dades_ESPAI[1].slice(0,-1);
+  var lliureMEM = dades_ESPAI[3].slice(0,-1);
   var utilitzadaMEM = totalMEM-lliureMEM;
   var percentatgeLliureMEM = (lliureMEM * 100)/totalMEM;
 

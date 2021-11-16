@@ -20,6 +20,7 @@ class Intranet extends CI_Controller {
             $data['correu'] = $this->session->userdata('email');
             $data['nom'] = $this->ion_auth->user()->row();
             $data['foto_url'] = $this->obtenir_foto();
+            $data['registre_cron'] = $this->obtenir_registre_cron();
 
             $data['usuaris'] = $this->obtenir_usuaris();
             $data['grups_usuaris'] = $this->obtenir_grups_usuaris();
@@ -124,6 +125,21 @@ class Intranet extends CI_Controller {
       if($this->ion_auth->logged_in() ){
             shell_exec('echo "Test" | mail -a "From: Pieye <eloi@compsaonline.com>" -s "TEST" eloi.roca20@gmail.com');
       }
+    }
+
+    //Llegir el fitxer de Log del Cron
+    public function obtenir_registre_cron(){
+      $liniesFitxer=array();
+      if ($file = fopen(base_url('assets/logs/LogCronRaspberry.log'), "r")) {
+        while(!feof($file)) {
+            $line = fgets($file);
+            array_push($liniesFitxer,$line);
+        }
+        fclose($file);
+      }
+      //Girem el array
+      $liniesFitxer = array_reverse($liniesFitxer);
+      return $liniesFitxer;
     }
 
 /*

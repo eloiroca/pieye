@@ -45,6 +45,88 @@
                       </div>
                     </div>
 
+                    <!--REGISTRE CRON-->
+                    <div class="col-md-4 col-sm-12 col-xs-12 ">
+                      <div class="x_panel tile fixed_height_320 overflow_hidden">
+                        <div class="x_title">
+                          <h2>Cron</h2>
+                          <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                              <a href="<?php echo base_url('assets/logs/LogCronRaspberry.log'); ?>" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                          </ul>
+                          <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                          <?php foreach ($registre_cron as $key => $linea_registre_cron) {
+                            ?>
+                            <p class="linia_registre_cron"><?php echo $linea_registre_cron; ?></p>
+                            <?php
+                          } ?>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+                    <!--USUARIS WEB RASPBERRY PI-->
+                    <div class="col-md-4 col-sm-4 ">
+                      <div class="x_panel">
+                        <div class="x_title">
+                          <h2>Usuarios</h2>
+                          <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                              <a href="<?php echo base_url('auth'); ?>" ><i class="fa fa-wrench"></i></a>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                          </ul>
+                          <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                          <table class="table table-hover usuaris_inici">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Usuari</th>
+                                <th>Grupo</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php for ($i=0; $i < count($usuaris); $i++) {
+                                $grups_usuari = '';
+                                echo "<tr>";
+                                echo "<th scope='row'>".$usuaris[$i]['id']."</th>";
+                                echo "<td>".$usuaris[$i]['first_name']."</td>";
+                                echo "<td>".$usuaris[$i]['last_name']."</td>";
+                                echo "<td>".$usuaris[$i]['username']."</td>";
+
+                                  for ($u=0; $u < count($grups_usuaris); $u++){
+                                      if ($grups_usuaris[$u]['username'] == $usuaris[$i]['username']){
+                                          $grups_usuari .= $grups_usuaris[$u]['name'].' ';
+                                      }
+                                }
+
+                                echo "<td>".$grups_usuari."</td>";
+                                echo "</tr>";
+
+                              } ?>
+                            </tbody>
+                          </table>
+
+                        </div>
+                      </div>
+                    </div>
+
                     <!--SERVEIS RASPBERRY PI-->
                     <div class="col-md-4 col-sm-12 col-xs-12 ">
                       <div class="x_panel tile fixed_height_320 overflow_hidden">
@@ -111,59 +193,6 @@
                       </div>
                     </div>
 
-                    <!--USUARIS WEB RASPBERRY PI-->
-                    <div class="col-md-4 col-sm-4 ">
-                      <div class="x_panel">
-                        <div class="x_title">
-                          <h2>Usuarios</h2>
-                          <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li class="dropdown">
-                              <a href="<?php echo base_url('auth'); ?>" ><i class="fa fa-wrench"></i></a>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                          </ul>
-                          <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                          <table class="table table-hover usuaris_inici">
-                            <thead>
-                              <tr>
-                                <th>#</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Usuari</th>
-                                <th>Grupo</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <?php for ($i=0; $i < count($usuaris); $i++) {
-                                $grups_usuari = '';
-                                echo "<tr>";
-                                echo "<th scope='row'>".$usuaris[$i]['id']."</th>";
-                                echo "<td>".$usuaris[$i]['first_name']."</td>";
-                                echo "<td>".$usuaris[$i]['last_name']."</td>";
-                                echo "<td>".$usuaris[$i]['username']."</td>";
-
-                                  for ($u=0; $u < count($grups_usuaris); $u++){
-                                      if ($grups_usuaris[$u]['username'] == $usuaris[$i]['username']){
-                                          $grups_usuari .= $grups_usuaris[$u]['name'].' ';
-                                      }
-                                }
-
-                                echo "<td>".$grups_usuari."</td>";
-                                echo "</tr>";
-
-                              } ?>
-                            </tbody>
-                          </table>
-
-                        </div>
-                      </div>
-                    </div>
-
                     <!--ALTRES DADES WEB RASPBERRY PI-->
                     <div class="col-md-4 col-sm-12 col-xs-12 ">
                       <div class="x_panel tile fixed_height_320 overflow_hidden">
@@ -181,7 +210,7 @@
                           <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-							<?php if ($estatserveis<1){ ?>
+							<?php if (count($estatserveis)>1){ ?>
                             <tr>
 
                               <td>

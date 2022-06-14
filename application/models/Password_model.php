@@ -7,13 +7,19 @@
 
     //Funcio que retornara les CONTRASENYES existents a la BD del usuari
     public function get_contrasenyes_bd($usuari, $sql=''){
-        $query = $this->db->query("SELECT usuari, password, (select nom from categories_passwords cp where cp.id = p.categoria) as categoria, user, descripcio, link, comentari, id from passwords p where user = ".$usuari." ".$sql);
+		//CHECK IF USER IS IN GROUP ADMIN
+		$query = $this->db->query("SELECT * FROM users_groups WHERE user_id = ".$usuari." AND group_id = 1");
+		$result = $query->result_array();
+		$query = $this->db->query("SELECT usuari, password, (select nom from categories_passwords cp where cp.id = p.categoria) as categoria, user, descripcio, link, comentari, id from passwords p where user = ".$usuari." ".$sql);
+		if(count($result)>0){
+			$query = $this->db->query("SELECT usuari, password, categoria, user, descripcio, link, comentari, id from passwords p ".$sql);
+		}
         return $query->result_array();
     }
 
     //Funcio que retornara les CONTRASENYES existents a la BD del usuari
     public function get_contrasenya_user_bd($usuari, $sql=''){
-        $query = $this->db->query("SELECT usuari, password, categoria, user, descripcio, link, comentari, id from passwords p where user = ".$usuari." ".$sql);
+		$query = $this->db->query("SELECT usuari, password, categoria, user, descripcio, link, comentari, id from passwords p where user = ".$usuari." ".$sql);
         return $query->result_array();
     }
 

@@ -25,7 +25,7 @@
       <li><a><i class="fa fa-table"></i> Datos <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="<?php echo base_url().'passwords';?>">Passwords</a></li>
-          <li><a href="tables_dynamic.html">Documentación</a></li>
+          <li><a href="<?php echo base_url().'criptos';?>">Criptos</a></li>
         </ul>
       </li>
       <li><a><i class="fa fa-bar-chart-o"></i> Gràficos <span class="fa fa-chevron-down"></span></a>

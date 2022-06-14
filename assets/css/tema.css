@@ -5203,7 +5203,7 @@ input{
 	background-color: #23527c !important;
 }
 
-.progress_bd{
+.progress_bd, .progress_cron{
 	display: none;
 }
 

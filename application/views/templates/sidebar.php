@@ -5,9 +5,6 @@
     <ul class="nav side-menu">
       <li><a><i class="fa fa-home"></i> Casa <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="index.html">Dashboard</a></li>
-          <li><a href="index2.html">Dashboard2</a></li>
-          <li><a href="index3.html">Dashboard3</a></li>
         </ul>
       </li>
       <li><a><i class="fa fa-car"></i> Vehículo <span class="fa fa-chevron-down"></span></a>
@@ -25,7 +22,6 @@
       <li><a><i class="fa fa-table"></i> Datos <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="<?php echo base_url().'passwords';?>">Passwords</a></li>
-          <li><a href="<?php echo base_url().'criptos';?>">Criptos</a></li>
         </ul>
       </li>
       <li><a><i class="fa fa-bar-chart-o"></i> Gràficos <span class="fa fa-chevron-down"></span></a>
@@ -43,7 +39,7 @@
       <li><a><i class="fa fa-bug"></i> Sitios <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="e_commerce.html">IDENTITY EYE</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="https://cryptoeye.ddns.net/">CRYPTO EYE</a></li>
           <li><a href="project_detail.html">Project Detail</a></li>
           <li><a href="contacts.html">Contacts</a></li>
           <li><a href="profile.html">Profile</a></li>
